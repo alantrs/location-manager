@@ -1,4 +1,4 @@
-package com.placeManager.locationmanager.web;
+package com.placeManager.locationmanager.domain;
 
 import com.placeManager.locationmanager.api.PlaceResponse;
 import com.placeManager.locationmanager.domain.Place;

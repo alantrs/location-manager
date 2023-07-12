@@ -3,7 +3,10 @@ package com.placeManager.locationmanager.web;
 import com.placeManager.locationmanager.api.PlaceRequest;
 import com.placeManager.locationmanager.api.PlaceResponse;
 import com.placeManager.locationmanager.domain.Place;
+import com.placeManager.locationmanager.domain.PlaceMapper;
 import com.placeManager.locationmanager.domain.PlaceService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,10 +14,11 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.util.List;
+
 
 @RestController
 @RequestMapping("/places")
+@Tag(name = "Places")
 public class PlaceController {
 
     private PlaceService placeService;
@@ -23,6 +27,7 @@ public class PlaceController {
         this.placeService = placeService;
     }
 
+    @Operation(summary = "Cria places")
     @PostMapping
     public ResponseEntity<Mono<PlaceResponse>> create(@Valid @RequestBody PlaceRequest request){
         var placeResponse = placeService.createPlace(request).map(PlaceMapper::toResponse);

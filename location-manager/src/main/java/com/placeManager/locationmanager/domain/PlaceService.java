@@ -25,4 +25,8 @@ public class PlaceService {
         return placeRepository.findAll();
     }
 
+    public Mono<Place> getPlaceById(Long id) {
+        return placeRepository.findById(id);
+    }
+
 }

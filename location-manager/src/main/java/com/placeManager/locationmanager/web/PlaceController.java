@@ -33,4 +33,9 @@ public class PlaceController {
     public Flux<Place> list() {
         return placeService.placeList();
     }
+
+    @GetMapping("/{id}")
+    public Mono<Place> getPlaceById(@PathVariable Long id) {
+        return placeService.getPlaceById(id);
+    }
 }

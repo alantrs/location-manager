@@ -15,7 +15,6 @@ A aplicação é uma implementação simples e eficiente utilizando os princípi
 
 ## Práticas adotadas
 
-- SOLID
 - Testes automatizados
 - API reativa na web e na camada de banco
 - Uso de DTOs para a API
